@@ -1,13 +1,12 @@
 /* font */
-@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
-.spoka * {
-    font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+:root {
+    --main-color: #c4c4c4;
 }
 
 /* reset */
-body,
-article,
-section {
+body {
     margin: 0;
     padding: 0;
 }
@@ -16,33 +15,25 @@ h1,
 h2,
 h3,
 p {
+    font: inherit;
     margin: 0;
-    font: inherit;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button,
-input {
-    border: 0;
-    background-color: 0;
-    font: inherit;
-    color: inherit;
+img {
+    width: 100%;
 }
 
 button {
+    border: 0;
+    font: inherit;
     cursor: pointer;
 }
 
-ul,
-li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+a {
+    text-decoration: none;
+    color: inherit;
 }
+
 /* css */
 .a11y-hidden {
     clip: rect(1px, 1px, 1px, 1px);
@@ -56,256 +47,48 @@ li {
 }
 
 body {
-    box-sizing: border-box;
-    min-height: 100vh;
-    font-family: "Spoqa Han Sans", sans-serif;
-    display: flex;
-    color: black;
-    font-weight: 500;
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
 }
 
-.login-wrap {
-    width: 520px;
-    height: auto;
-    min-height: 50vh;
-    border: 1px solid #c4c4c4;
-    border-radius: 10px;
-    margin: auto;
-    background-color: white;
-}
-
-/* header */
-.login-wrap .header {
-    height: 58px;
-    border-bottom: 1px solid #c4c4c4;
+.main {
+    height: 100vh;
+    background-color: #f2f2f2;
 
     display: flex;
-    flex-shrink: 0;
     align-items: center;
     justify-content: center;
 }
 
-.login-wrap .header h2 {
-    font-size: 16px;
-}
-
-/* section 1 */
-.login-input {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.slogan {
-    font-size: 20px;
-    margin: 23px auto 23px 23px;
-}
-
-/* login-form */
-.login-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-[class^="inp"],
-.btn-login {
-    box-sizing: border-box;
-    width: 472px;
-    height: 50px;
-    border: 1px solid #c4c4c4;
-    border-radius: 5px;
-    padding-left: 16px;
-    font-size: 16px;
-}
-
-.login-form input::placeholder {
-    color: #767676;
-    font-weight: 400;
-}
-
-/* login-hold */
-.login-hold {
-    display: flex;
-    align-self: flex-start;
-}
-
-.txt-hide {
-    width: 1px;
-    height: 1xp;
-    overflow: hidden;
-    clip-path: inset(50%);
-}
-
-.labl-hold {
-    position: relative;
-    font-size: 16px;
-    color: #767676;
-    top: 3px;
-    left: 20px;
-}
-
-.labl-hold::before,
-.labl-hold::after {
-    content: "";
-    width: 22px;
-    height: 22px;
-}
-
-.labl-hold::before {
-    display: inline-block;
-    box-sizing: border-box;
+.wrap_login_info {
+    width: 500px;
     background-color: #fff;
-    border-radius: 50%;
-    margin-right: 8px;
-    vertical-align: -6px;
-    border: 1px solid #767676;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 30px;
 }
 
-.labl-hold::after {
-    background: url(../images/Vector-def.svg) 0 0 /10px no-repeat;
-    position: absolute;
-    top: 11px;
-    left: 6px;
+.wrap_login_info .main-tit {
+    text-align: center;
+    margin-bottom: 28px;
 }
 
-.inp-hold:checked + .labl-hold::before {
-    background-color: #2f80ed;
+.wrap_login_info img {
+    width: 138px;
+}
+.wrap_login_info .info-txt {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 32px;
 }
 
-.inp-hold:checked + .labl-hold::after {
-    background: url(../images/Vector.svg) 0 0 / 10px no-repeat;
-}
-
-.btn-login {
-    margin-top: 13px;
-
-    border: 0;
+.wrap_login_info .btn-modar-open {
+    width: 100%;
+    min-height: 60px;
+    border: 1px sol;
+    border-radius: 5px;
     background-color: #2f80ed;
 
     color: #fff;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
-}
-
-/* 에러 코드 */
-
-[class^="inp"].error {
-    border: 2px solid #f4492e;
-}
-
-[id^="error"] {
-    color: #f4492e;
-    font-size: 14px;
-    font-weight: 400;
-
-    display: flex;
-    align-self: flex-start;
-    margin-left: 28px;
-}
-
-/* link-form */
-.link-form {
-    margin-top: 17px;
-    font-size: 14px;
-    color: #767676;
-    font-weight: 400;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.link-form .link-join::after {
-    content: "|";
-    margin: 0 12px;
-}
-
-/* 소셜 로그인 */
-
-.login-wrap .social-login {
-    border-top: 1px solid #c4c4c4;
-    margin: 38px 24px 25px;
-    position: relative;
-    z-index: 0;
-}
-
-.login-wrap .social-login::after {
-    content: "또는";
-    width: 52px;
-
-    color: #767676;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-
-    background-color: #fff;
-
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-
-.social-login .social-list {
-    margin: 29px 0 25px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.social-list [class^="account"] {
-    min-height: 50px;
-    border: 1px solid #767676;
-    border-radius: 5px;
-    box-sizing: border-box;
-
-    color: #767676;
-    font-size: 16px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-}
-
-[class^="account"]::after {
-    content: "";
-    width: 28px;
-    height: 28px;
-
-    background-image: url(../images/Group.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-
-    position: absolute;
-    top: 50%;
-    left: 13px;
-    transform: translateY(-40%);
-}
-
-.social-list .account-facebook {
-    border: 1px solid #2d9cdb;
-}
-.social-list .account-naver {
-    border: 1px solid #00bf18;
-}
-.social-list .account-kakao {
-    border: 1px solid #f2c94c;
-}
-
-.social-list .account-facebook::after {
-    background-image: url(../images/facebook.svg);
-}
-.social-list .account-naver::after {
-    background-image: url(../images/naver-logo.svg);
-}
-.social-list .account-kakao::after {
-    background-image: url(../images/message-circle.svg);
 }
