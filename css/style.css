@@ -59,7 +59,8 @@ body {
     justify-content: center;
 }
 
-.wrap_login_info {
+/* 위니브 로그인 */
+.wrap-login-info {
     width: 500px;
     background-color: #fff;
     border: 1px solid var(--main-color);
@@ -67,21 +68,23 @@ body {
     padding: 30px;
 }
 
-.wrap_login_info .main-tit {
+.wrap-login-info .main-tit {
     text-align: center;
-    margin-bottom: 28px;
 }
 
-.wrap_login_info img {
+.wrap-login-info img {
     width: 138px;
+    aspect-ratio: 138/40;
+    object-fit: cover;
 }
-.wrap_login_info .info-txt {
+.wrap-login-info .info-txt {
     font-size: 16px;
     font-weight: 400;
-    margin-bottom: 32px;
+    text-align: center;
+    margin: 28px auto 32px auto;
 }
 
-.wrap_login_info .btn-modar-open {
+.wrap-login-info .btn-modal-open {
     width: 100%;
     min-height: 60px;
     border: 1px sol;
@@ -91,4 +94,17 @@ body {
     color: #fff;
     font-size: 22px;
     font-weight: 700;
+}
+
+/* 로그인 모달 */
+
+.wrap-modal {
+    display: none;
+    width: 520px;
+
+    height: 500px;
+    background-color: skyblue;
+
+    border-radius: 10px;
+    border: 1px solid var(--main-color);
 }
