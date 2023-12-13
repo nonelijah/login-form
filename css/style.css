@@ -1,0 +1,106 @@
+/* 공용 */
+:root {
+    --color-border: #c4c4c4;
+    --color-blue1: #2f80ed;
+    --color-blue2: #1e5296;
+    --radius-border: 5px;
+}
+
+img {
+    max-width: 100%;
+}
+
+button:enabled {
+    cursor: pointer;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* css */
+
+body {
+    height: 100vh;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.scroll-lock {
+    overflow: hidden;
+}
+
+/* 로그인 박스 */
+.wrap-login-box {
+    width: 500px;
+    height: 240px;
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s;
+    z-index: 0;
+}
+
+.wrap-login-box .box-tit {
+    width: 138px;
+    height: 40px;
+    margin: 30px auto 28px;
+}
+.wrap-login-box .box-txt {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.wrap-login-box .btn-modal-open {
+    width: 440px;
+    height: 60px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    background-color: var(--color-blue1);
+    border: none;
+    border-radius: var(--radius-border);
+}
+.btn-modal-open:active {
+    background-color: var(--color-blue2);
+}
+
+/* 로그인 모달 */
+.modal-dim {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(00, 00, 00, 0.6);
+    transition: all 0.3s;
+}
+
+.wrap-login .modal-login {
+    width: 500px;
+    height: 500px;
+    background-color: royalblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+    z-index: 300;
+}
+
+body section.wrap-login .close.close {
+    display: none;
+}
